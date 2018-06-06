@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Отжимания</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Пользователь</th>
+      <th>Количество</th>
+      <th>Подходов</th>
+      <th>Комментарии</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trainings.each do |training| %>
+      <tr>
+        <td><%= training.user  %></td>
+        <td><%= training.count %></td>
+        <td><%= training.approaches %></td>
+        <td><%= training.comments %></td>
+        <td><%= link_to 'Посмотреть', training %></td>
+        <td><%= link_to 'Изменить', edit_training_path(training) %></td>
+        <td><%= link_to 'Удалить', training, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Отжаться', new_training_path %>

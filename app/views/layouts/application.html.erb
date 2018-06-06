@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pushupsbattle</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
+  <header>
+    <%= link_to "Главная", root_path%>
+    <% if current_user?%>
+      <%= link_to "Отжимания", trainings_path%>
+      Вы вошли как <%= current_user.to_s%>
+      <%= link_to "Выйти", logout_path%>
+    <% else %>
+      <%= link_to "Регистрация", signup_path%>
+      <%= link_to "Вход", login_path%>
+    <% end %>
+  </header>
+    <%= yield %>
+  </body>
+</html>

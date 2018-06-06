@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Пользователь:</strong>
+  <%= @training.user %>
+</p>
+
+<p>
+  <strong>Количество:</strong>
+  <%= @training.count %>
+</p>
+
+<p>
+  <strong>Подходов:</strong>
+  <%= @training.approaches %>
+</p>
+
+<p>
+  <strong>Комментарии:</strong>
+  <%= @training.comments %>
+</p>
+
+<%= link_to 'Изменить', edit_training_path(@training) %> |
+<%= link_to 'Назад', trainings_path %>

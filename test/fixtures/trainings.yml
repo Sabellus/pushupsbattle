@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  count: 1
+  approaches: 1
+  comments: MyString
+
+two:
+  user: two
+  count: 1
+  approaches: 1
+  comments: MyString
