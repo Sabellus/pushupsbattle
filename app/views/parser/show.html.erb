@@ -1,0 +1,19 @@
+<h1>Parser#show</h1>
+<p>Find me in app/views/parser/show.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Статья</th>
+      <th>Ссылка</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @showings.each do |tag| %>
+      <tr>
+        <td><%= tag[:tags].first %></td>
+        <td><a href="<%= tag[:linkstate] %>"><%= tag[:linkstate] %></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

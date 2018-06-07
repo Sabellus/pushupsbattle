@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'parser/show'
+
   resources :trainings
   get 'signup', to: 'users#new'
   post 'login', to: 'sessions#create'
