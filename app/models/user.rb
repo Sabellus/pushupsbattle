@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :trainings, dependent: :destroy
+  has_and_belongs_to_many :follower, class_name: "User", foreign_key: "followed_id", join_table: "followers", association_foreign_key: "follower_id"
+  has_and_belongs_to_many :followed, class_name: "User", foreign_key: "follower_id", join_table: "followers", association_foreign_key: "followed_id"
 
   validates :first_name,
             presence:true

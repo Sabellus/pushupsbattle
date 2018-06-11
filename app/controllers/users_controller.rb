@@ -5,8 +5,18 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    puts @users
   end
-
+  def getid
+    @user = User.find(params[:id])
+    puts "kok"
+    @curid = session[:user_id]
+    @getid = @user.id
+    puts @getid
+    respond_to do |format|
+      format.html { redirect_to users_url}
+    end
+  end
   # GET /users/1
   # GET /users/1.json
   def show

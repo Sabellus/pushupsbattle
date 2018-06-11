@@ -13,6 +13,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
+
 document.addEventListener('DOMContentLoaded', () => {
   var el = document.getElementById('email');
   el.addEventListener('change', (event) => {

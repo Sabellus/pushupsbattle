@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :users
   get 'page/index'
   root 'page#index'
+  get '/users/:id/getid', to: 'users#getid', as: 'getid_user'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

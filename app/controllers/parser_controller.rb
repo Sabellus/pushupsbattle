@@ -15,7 +15,7 @@ class ParserController < ApplicationController
         tags: tags,
         linkstate: linkstate
       )
-    end
+      end
   end
 end
 # showing_id = showing['id'].split('_').last.to_i
