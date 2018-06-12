@@ -5,16 +5,13 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    puts @users
   end
   def getid
     @user = User.find(params[:id])
-    puts "kok"
-    @curid = session[:user_id]
-    @getid = @user.id
-    puts @getid
+    puts current_user
+    puts @user
     respond_to do |format|
-      format.html { redirect_to users_url}
+      format.html { redirect_to root_url, notice: 'Вы зарегистрировались успешно!.' }
     end
   end
   # GET /users/1

@@ -17,3 +17,10 @@
 <%= link_to 'Подписаться', getid_user_path(@user)%>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+
+            <% if current_user.following?(@user) %>
+              <%= render 'unfollow' %>
+            <% else %>
+              <%= render 'follow' %>
+            <% end %>

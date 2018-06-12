@@ -16,7 +16,9 @@
     <%= link_to "Главная", root_path%>
     <% if current_user?%>
       <%= link_to "Отжимания", trainings_path%>
-      Вы вошли как <%= current_user.to_s%>
+      Вы вошли как <%= current_user.to_s%>,
+      Количество подписчиков: <%= current_user.followers.count%>,
+      Количество подписок: <%= current_user.following.count%>
       <%= link_to "Выйти", logout_path%>
     <% else %>
       <%= link_to "Регистрация", signup_path%>
