@@ -13,21 +13,44 @@
       <%= content_tag :div, value, class: "flash #{key}" %>
   <% end %>
   <header>
-    <%= link_to "Главная", root_path%>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <%= link_to "Push Ups Battle", root_path , class: "navbar-brand"%>
     <% if current_user?%>
-      <%= link_to "Отжимания", trainings_path%>
-      Вы вошли как <%= current_user.to_s%>,
-      Количество подписчиков: <%= current_user.followers.count%>,
-      Количество подписок: <%= current_user.following.count%>
-      <%= link_to "Выйти", logout_path%>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <%= link_to "Отжимания", trainings_path, class:"nav-link"%>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      Вы вошли как <%= current_user.to_s%>
+      Подписчиков: <%= current_user.followers.count%>,
+      Подписок: <%= current_user.following.count%> <br>
+      <%= link_to "Выйти", logout_path, class:"btn btn-outline-success my-2 my-sm-0"%>
+    </div>
+    <div class="form-inline my-2 my-lg-0">
     <% else %>
-      <%= link_to "Регистрация", signup_path%>
-      <%= link_to "Вход", login_path%>
-    <% end %>
-  </header>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
 
+        </li>
+      </ul>
+      <%= link_to "Регистрация", signup_path, class:"btn btn-outline-primary mr-md-2"%>
+      <%= link_to "Вход", login_path, class:"btn btn-outline-success my-2 my-sm-0"%>
+    <% end %>
+    </div>
+  </div>
+</nav>
+  </div>
+
+  </header>
+    <div class="container">
     <%= yield %>
-  <footer>
+    </div>
+  <footer class="container">
     by Veprev
   </footer>
   </body>
